@@ -1,0 +1,6 @@
+{
+    "themes": [{
+        "name" : "medcom-vdx-theme",
+        "types": [ "login", "email", "account" ]
+    }]
+}
