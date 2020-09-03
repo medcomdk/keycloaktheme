@@ -1,6 +1,6 @@
 {
     "themes": [{
-        "name" : "medcom-vdx-theme",
+        "name" : "medcom-vdx-keycloak-theme",
         "types": [ "login", "email", "account" ]
     }]
 }

@@ -8,7 +8,7 @@ services:
       - KEYCLOAK_IMPORT=/importrealms/realm-test.json
      volumes:
        - ./keycloak/realm-test.json:/importrealms/realm-test.json
-       - ./keycloak/medcom-vdx-theme-1.0.0.jar:/opt/jboss/keycloak/standalone/deployments/medcom-vdx-theme-1.0.0.jar
+       - ../target/medcom-vdx-keycloak-theme-1.0.0.jar:/opt/jboss/keycloak/standalone/deployments/medcom-vdx-keycloak-theme-1.0.0.jar
      ports:
       - "8080:8080"
    theme:
