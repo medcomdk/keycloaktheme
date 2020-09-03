@@ -35,13 +35,12 @@
                                 </label>
                             </div>
                         </#if>
-                        </div>
                         <div class="${properties.kcFormOptionsWrapperClass!}">
                             <#if realm.resetPasswordAllowed>
-                                <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
+                                <!-- <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span> -->
+								<span><a tabindex="5" href="https://vdxapi.dk/passwordreset">${msg("doForgotPassword")}</a></span>
                             </#if>
                         </div>
-
                   </div>
 
                   <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">
