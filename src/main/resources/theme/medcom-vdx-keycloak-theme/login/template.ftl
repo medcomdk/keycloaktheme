@@ -9,96 +9,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11" >
     <meta http-equiv="X-UA-Compatible" content="IE=10" >
     <meta name="robots" content="noindex, nofollow">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>${msg("loginTitle",(realm.displayName!''))}</title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
-	<link href="${url.resourcesPath}/css/styles.css" rel="stylesheet" />
-	<link href="${url.resourcesPath}/css/sb-admin-2.css" rel="stylesheet" />
-	<link href="${url.resourcesPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="${url.resourcesPath}/css/styles.css" rel="stylesheet" />
+    <link href="${url.resourcesPath}/css/sb-admin-2.css" rel="stylesheet" />
+    <link href="${url.resourcesPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
-	<!-- Page Content -->
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center my-4">
-				<img height="100" src="${url.resourcesPath}/img/vdx_logo_wh.png" />
-			</div>
-			<h1 class="card-title col-lg-12 text-center text-white" id="clientname"></h5>
-		</div>
-	
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<div class="card-deck my-3">
-					<#list social.providers as p>
-						<div></div>
-						<div class="card">
-							<div class="card-body h-75" onclick="location.href='${p.loginUrl}';" style="cursor: pointer;">
-								<h5 class="card-title">${p.displayName}</h5>
-								<#if p.alias='medcom-video-lokale'>
-									<p class="card-text">For dem som har en lokalbruger i VDX.</p>
-								</#if>
-								<#if p.alias='seb'>
-									<p class="card-text">For dem som er oprettet i SEB</p>
-								</#if>
-								<#if p.alias='kombit'>
-									<p class="card-text">For brugere som har adgang til kommunale løsninger via KOMBIT</p>
-								</#if>								
-							</div>
-							<div class="card-body">
-								<a href="${p.loginUrl}" class="btn btn-primary">Fortsæt</a>
-							</div>
-							<#if realm.rememberMe && !usernameEditDisabled??>
-								<div class="checkbox">
-									<label>
-										<#if login.rememberMe??>
-											<input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" checked> ${msg("rememberMe")}
-										<#else>
-											<input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox"> ${msg("rememberMe")}
-										</#if>
-									</label>
-								</div>
-							</#if>
-						</div>						
-					</#list>			
-				</div>
-			</div>
-		</div>
-		
-		<!-- <div class="row">
-			<div class="col-lg-12 text-center">
-				<div class="card text-center">
-				    <div class="card-body">
-						<h5 class="card-title">OBS: Log-ind siden er ændret</h5>
-						<p class="card-text">For at imødekomme log-ind integrationer til fra andre systemer har vi d. 18 maj 2020 ændret loginsiden en smule.<br />Hvis du tidligere har brugt bookingportalen eller administrationsportalen så skal du vælge "VDX Lokal bruger" ovenfor. Herefter indtaster du dine log-ind oplysninger som normalt.</p>
-				    </div>
-				    <div class="card-footer text-muted">
-						<small class="form-text text-muted">18 maj 2020</small>
-				    </div>
-				</div>
-			</div>
-		</div> -->
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center my-4">
+            <img height="100" src="${url.resourcesPath}/img/vdx_logo_wh.png" />
+        </div>
+        <h1 class="card-title col-lg-12 text-center text-white" id="clientname"></h5>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="kc-page-title"><#nested "header"></h1>
+      <div>
+      <div id="kc-content">
+        <div id="kc-content-wrapper">
+
+          <#if displayMessage && message?has_content>
+              <div class="alert alert-${message.type}">
+                  <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
+                  <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
+                  <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
+                  <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
+                  <span class="kc-feedback-text">${kcSanitize(message.summary)?no_esc}</span>
+              </div>
+          </#if>
+
+          <#nested "form">
+
+          <#if displayInfo>
+              <div id="kc-info" class="${properties.kcSignUpClass!}">
+                  <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
+                      <#nested "info">
+                  </div>
+              </div>
+          </#if>
+        </div>
+      </div>
+
+    </div>
   </div>
-  
-  <script>
-		var clientname = ''
-		const queryString = window.location.search;
-		const urlParams = new URLSearchParams(queryString);
-		const client_id = urlParams.get('client_id')		
-		if(client_id=='medcom:management'){
-			clientname = 'Management'
-		} else if(client_id=='medcom:booking') {
-			clientname = 'Booking'
-		}
-		console.log(clientname);
-		document.getElementById("clientname").innerHTML = clientname;
-	</script>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="${url.resourcesPath}/jquery/jquery.slim.min.js"></script>
-  <script src="${url.resourcesPath}/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
 </#macro>
