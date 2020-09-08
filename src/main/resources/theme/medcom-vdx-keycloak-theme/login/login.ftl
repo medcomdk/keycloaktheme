@@ -9,15 +9,12 @@
                         <div></div>
                         <div class="card">
                             <div class="card-body h-75" onclick="location.href='${p.loginUrl}';" style="cursor: pointer;">
-                                <h5 class="card-title">${p.displayName}</h5>
-                                <#if p.alias='medcom-video-lokale'>
-                                    <p class="card-text">For dem som har en lokalbruger i VDX.</p>
-                                </#if>
-                                <#if p.alias='seb'>
-                                    <p class="card-text">For dem som er oprettet i SEB</p>
-                                </#if>
-                                <#if p.alias='kombit'>
-                                    <p class="card-text">For brugere som har adgang til kommunale løsninger via KOMBIT</p>
+                                <#if p.displayName?contains("/")>
+                                    <#assign vals=p.displayName?split("/") >
+                                    <h5 class="card-title">${vals[0]?trim}</h5>
+                                    <p class="card-text">${vals[1]?trim}</p>
+                                <#else>
+                                    <h5 class="card-title">${p.displayName}</h5>
                                 </#if>
                             </div>
                             <div class="card-body">
