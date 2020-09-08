@@ -24,7 +24,7 @@
             <div class="col-lg-12 text-center my-4">
                 <img height="100" src="${url.resourcesPath}/img/vdx_logo_wh.png" />
             </div>
-            <h1 class="card-title col-lg-12 text-center text-white" id="clientname"></h1>
+            <h1 class="card-title col-lg-12 text-center text-white" id="clientname">${client.clientId}</h1>
         </div>
 
         <#nested "form">
@@ -38,19 +38,7 @@
         </#if>
     </div>
 
-    <script>
-        var clientname = ''
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const client_id = urlParams.get('client_id')
-        if(client_id=='medcom:management'){
-            clientname = 'Management'
-        } else if(client_id=='medcom:booking') {
-            clientname = 'Booking'
-        }
-        console.log(clientname);
-        document.getElementById("clientname").innerHTML = clientname;
-    </script>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="${url.resourcesPath}/jquery/jquery.slim.min.js"></script>
