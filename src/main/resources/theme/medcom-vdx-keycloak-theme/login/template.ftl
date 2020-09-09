@@ -24,7 +24,7 @@
             <div class="col-lg-12 text-center my-4">
                 <img height="100" src="${url.resourcesPath}/img/vdx_logo_wh.png" />
             </div>
-            <h1 class="card-title col-lg-12 text-center text-white" id="clientname">${client.clientId}</h1>
+            <h1 class="card-title col-lg-12 text-center text-white" id="clientname"></h1>
         </div>
 
         <#nested "form">
