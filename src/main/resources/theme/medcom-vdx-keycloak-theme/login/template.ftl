@@ -24,9 +24,9 @@
             <div class="col-lg-12 text-center my-4">
                 <img height="100" src="${url.resourcesPath}/img/vdx_logo_wh.png" />
             </div>
-            <#if client.clientId?contains(":")>
+            <#if client?? && client.clientId?contains(":")>
                 <#assign vals=client.clientId?split(":")>
-                <h1 class="card-title col-lg-12 text-center text-white" id="clientname">${vals[1]?trim}</h1>
+                <h1 class="card-title col-lg-12 text-center text-white" id="clientname">${vals[1]?trim?cap_first}</h1>
             </#if>
         </div>
 
