@@ -24,7 +24,12 @@
             <div class="col-lg-12 text-center my-4">
                 <img height="100" src="${url.resourcesPath}/img/vdx_logo_wh.png" />
             </div>
-            <h1 class="card-title col-lg-12 text-center text-white" id="clientname">Book</h1>
+            <#if client.clientId?contains(":")>
+                <#assign vals=p.displayName?split(":")>
+                <h1 class="card-title col-lg-12 text-center text-white" id="clientname">${vals[1]?trim}</h1>
+            <#else>
+                <h1 class="card-title col-lg-12 text-center text-white" id="clientname">${client.clientId}</h1>
+            </#if>
         </div>
 
         <#nested "form">
