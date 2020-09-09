@@ -49,6 +49,7 @@
             clientname = 'Booking'
         }
         console.log(clientname);
+        console.log("Hello");
         document.getElementById("clientname").innerHTML = clientname;
     </script>
 
