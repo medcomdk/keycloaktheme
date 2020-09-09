@@ -45,7 +45,19 @@
         </#if>
     </div>
 
-
+    <script>
+        var clientname = ''
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const client_id = urlParams.get('client_id')
+        if(client_id=='medcom:management'){
+            clientname = 'Management'
+        } else if(client_id=='medcom:booking') {
+            clientname = 'Booking'
+        }
+        console.log(clientname);
+        document.getElementById("clientname").innerHTML = clientname;
+    </script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="${url.resourcesPath}/jquery/jquery.slim.min.js"></script>
