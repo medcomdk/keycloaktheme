@@ -5,3 +5,7 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+
+# redirect_msg {
+    margin-top: margin-top: 100px;
+}
