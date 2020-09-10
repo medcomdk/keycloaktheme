@@ -1,6 +1,12 @@
 {
-    "themes": [{
-        "name" : "medcom-vdx-keycloak-theme",
+    "themes": [
+        {
+        "name" : "medcom-vdx-broker",
         "types": [ "login", "email", "account" ]
-    }]
+        },
+        {
+        "name" : "medcom-vdx-booking",
+        "types": [ "login", "email", "account" ]
+        }
+    ]
 }

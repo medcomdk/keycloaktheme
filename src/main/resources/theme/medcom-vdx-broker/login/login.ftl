@@ -9,8 +9,8 @@
                         <div></div>
                         <div class="card">
                             <div class="card-body h-75" onclick="location.href='${p.loginUrl}';" style="cursor: pointer;">
-                                <#if p.displayName?contains("/")>
-                                    <#assign vals=p.displayName?split("/") >
+                                <#if p.displayName?contains(":")>
+                                    <#assign vals=p.displayName?split(":") >
                                     <h5 class="card-title">${vals[0]?trim}</h5>
                                     <p class="card-text">${vals[1]?trim}</p>
                                 <#else>
