@@ -24,12 +24,13 @@ podTemplate(
          stage('Tag Docker Images And Push') {
              container('docker') {
                  docker.withRegistry('', 'dockerhub') {
-                     image = docker.image("kvalitetsit/medcom-vdx-keycloak-theme:dev")
-                     image.push("latest")
+                     image = docker.image("kvalitetsit/medcom-vdx-keycloak-theme:${env.GIT_COMMIT}")
+                     image.push("dev")
                      image.push("${env.GIT_COMMIT}")
                      if (env.TAG_NAME != null && env.TAG_NAME.matches("^v[0-9]*\\.[0-9]*\\.[0-9]*")) {
                          echo "Tagging version"
                          image.push(env.TAG_NAME.substring(1))
+                         image.push("latest")
                      }
                  }
              }

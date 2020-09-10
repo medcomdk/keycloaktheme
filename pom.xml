@@ -49,7 +49,6 @@
               <build>
                 <tags>
                   <tag>latest</tag>
-                  <tag>dev</tag>
                   <tag>${git.commit.id}</tag>
                 </tags>
                 <dockerFileDir>${basedir}</dockerFileDir>
