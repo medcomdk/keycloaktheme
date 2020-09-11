@@ -53,7 +53,13 @@
             <div id="kc-social-providers" class="${properties.kcFormSocialAccountContentClass!} ${properties.kcFormSocialAccountClass!}">
                 <ul class="${properties.kcFormSocialAccountListClass!} <#if social.providers?size gt 4>${properties.kcFormSocialAccountDoubleListClass!}</#if>">
                     <#list social.providers as p>
-                        <li class="${properties.kcFormSocialAccountListLinkClass!}"><a href="${p.loginUrl}" id="zocial-${p.alias}" class="zocial ${p.providerId}"> <span>${p.displayName}</span></a></li>
+                        <#if p.displayName?contains(":")>
+                            <#assign vals=p.displayName?split(":")>
+                            <#assign displayNameString=vals[0]?trim>
+                        <#else>
+                            <#assign displayNameString=p.displayName?trim>
+                        </#if>
+                        <li class="${properties.kcFormSocialAccountListLinkClass!}"><a href="${p.loginUrl}" id="zocial-${p.alias}" class="zocial ${p.providerId}"> <span>${displayNameString}</span></a></li>
                     </#list>
                 </ul>
             </div>
