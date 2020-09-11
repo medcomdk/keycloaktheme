@@ -864,7 +864,7 @@
     "strictTransportSecurity": "max-age=31536000; includeSubDomains"
   },
   "smtpServer": {},
-  "loginTheme": "medcom-vdx-keycloak-theme",
+  "loginTheme": "medcom-vdx-broker",
   "eventsEnabled": false,
   "eventsListeners": [
     "jboss-logging"
@@ -1066,10 +1066,11 @@
       }
     ]
   },
-  "internationalizationEnabled": false,
+  "internationalizationEnabled": true,
   "supportedLocales": [
-    ""
+    "da"
   ],
+  "defaultLocale": "da",
   "authenticationFlows": [
     {
       "id": "fac7fdea-ec1a-4f40-a634-bdf26a0300f5",
