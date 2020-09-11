@@ -5,3 +5,8 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+
+#redirectmsg {
+    color: white;
+    text-align: center;
+}

@@ -866,7 +866,7 @@
     "strictTransportSecurity": "max-age=31536000; includeSubDomains"
   },
   "smtpServer": {},
-  "loginTheme": "vdx-broker",
+  "loginTheme": "medcom-vdx-booking",
   "eventsEnabled": false,
   "eventsListeners": [
     "jboss-logging"

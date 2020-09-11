@@ -240,3 +240,8 @@ div#kc-social-providers ul li span {
 		max-width: 95%;
     }
 }
+
+#redirectmsg {
+    color: white;
+    text-align: center;
+}
