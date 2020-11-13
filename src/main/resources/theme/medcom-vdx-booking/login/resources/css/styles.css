@@ -241,7 +241,7 @@ div#kc-social-providers ul li span {
     }
 }
 
-#redirectmsg {
+#redirectmsg, #errorMsg {
     color: white;
     text-align: center;
 }
