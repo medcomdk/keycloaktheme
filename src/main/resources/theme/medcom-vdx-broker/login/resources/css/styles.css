@@ -5,8 +5,3 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
-
-#redirectmsg, #errorMsg {
-    color: white;
-    text-align: center;
-}

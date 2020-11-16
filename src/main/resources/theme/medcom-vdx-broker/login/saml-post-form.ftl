@@ -5,7 +5,16 @@
         ${kcSanitize(msg("saml.post-form.title"))}
     <#elseif section = "form">
         <script>window.onload = function() {document.forms[0].submit()};</script>
-        <h4 id=redirectmsg role="alert">${kcSanitize(msg("saml.post-form.message"))}</h4>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="card">
+                    <div class="card-body h-75">
+                        <h5 class="card-title">${kcSanitize(msg("saml.post-form.message"))}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <form name="saml-post-binding" method="post" action="${samlPost.url}">
             <#if samlPost.SAMLRequest??>
                 <input type="hidden" name="SAMLRequest" value="${samlPost.SAMLRequest}"/>
