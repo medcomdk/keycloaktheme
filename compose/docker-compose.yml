@@ -1,11 +1,12 @@
 version: '2'
 services:
    keycloak:
-    image: quay.io/keycloak/keycloak:22.0.3
+    image: quay.io/keycloak/keycloak:26.7.2
     volumes:
       - ./keycloak/realm-test.json:/opt/keycloak/data/import/realm-test.json
       - ./keycloak/realm-medcom.json:/opt/keycloak/data/import/realm-medcom.json
-      - ./keycloak/server-test.jks:/keystores/server-test.jks
+      - ./keycloak/server-test.jks:/opt/keycloak/data/test/server-test.jks
+      - ./keycloak/server-test.jks:/opt/keycloak/data/medcom/server-test.jks
       - ../target/medcom-vdx-keycloak-theme-1.0.0.jar:/opt/keycloak/providers/medcom-vdx-keycloak-theme-1.0.0.jar
     environment:
       - KEYCLOAK_ADMIN=keycloak

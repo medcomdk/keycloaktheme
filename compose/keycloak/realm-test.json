@@ -894,7 +894,7 @@
         "postBindingLogout": "true",
         "nameIDPolicyFormat": "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent",
         "postBindingResponse": "true",
-        "singleLogoutServiceUrl": "http://keycloak:8080/auth/realms/medcom/protocol/saml",
+        "singleLogoutServiceUrl": "http://localhost:8080/auth/realms/medcom/protocol/saml",
         "backchannelSupported": "",
         "signatureAlgorithm": "RSA_SHA256",
         "wantAssertionsEncrypted": "",
@@ -903,7 +903,7 @@
         "wantAssertionsSigned": "",
         "postBindingAuthnRequest": "true",
         "forceAuthn": "",
-        "singleSignOnServiceUrl": "http://keycloak:8080/auth/realms/medcom/protocol/saml",
+        "singleSignOnServiceUrl": "http://localhost:8080/auth/realms/medcom/protocol/saml",
         "wantAuthnRequestsSigned": "true",
         "addExtensionsElementWithKeyInfo": "false"
       }
@@ -1037,7 +1037,7 @@
             "true"
           ],
           "keystore": [
-            "/keystores/server-test.jks"
+            "/opt/keycloak/data/test/server-test.jks"
           ],
           "priority": [
             "200"

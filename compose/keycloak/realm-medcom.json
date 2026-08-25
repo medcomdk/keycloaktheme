@@ -160,13 +160,13 @@
     },
     {
       "id": "52ebcb6a-d706-4be2-9068-ade7b4df82dc",
-      "clientId": "http://keycloak:8080/auth/realms/test",
+      "clientId": "http://localhost:8080/auth/realms/test",
       "surrogateAuthRequired": false,
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "http://keycloak:8080/auth/realms/test/broker/medcomlocal/endpoint"
+        "http://localhost:8080/auth/realms/test/broker/medcomlocal/endpoint"
       ],
       "webOrigins": [
         "http://localhost:8080"
@@ -185,9 +185,9 @@
         "saml.assertion.signature": "false",
         "saml.force.post.binding": "true",
         "saml.multivalued.roles": "false",
-        "saml_single_logout_service_url_post": "http://keycloak:8080/auth/realms/test/broker/medcomlocal/endpoint",
+        "saml_single_logout_service_url_post": "http://localhost:8080/auth/realms/test/broker/medcomlocal/endpoint",
         "saml.encrypt": "false",
-        "saml_assertion_consumer_url_post": "http://keycloak:8080/auth/realms/test/broker/medcomlocal/endpoint",
+        "saml_assertion_consumer_url_post": "http://localhost:8080/auth/realms/test/broker/medcomlocal/endpoint",
         "saml.server.signature": "true",
         "saml.server.signature.keyinfo.ext": "false",
         "exclude.session.state.from.auth.response": "false",
@@ -1002,7 +1002,7 @@
             "true"
           ],
           "keystore": [
-            "/keystores/server-test.jks"
+            "/opt/keycloak/data/medcom/server-test.jks"
           ],
           "priority": [
             "200"

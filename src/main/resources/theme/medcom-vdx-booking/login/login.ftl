@@ -36,10 +36,8 @@
                             </div>
                         </#if>
                         <div class="${properties.kcFormOptionsWrapperClass!}">
-                            <#if realm.resetPasswordAllowed>
-                                <!-- <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span> -->
-								<span><a tabindex="5" id="password-reset-link" href="https://vconf.dk/passwordreset">${msg("doForgotPassword")}</a></span>
-                            </#if>
+                            <!-- <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span> -->
+                            <span><a tabindex="5" id="password-reset-link" href="https://vconf.dk/passwordreset">${msg("doForgotPassword")}</a></span>
                         </div>
                   </div>
 
